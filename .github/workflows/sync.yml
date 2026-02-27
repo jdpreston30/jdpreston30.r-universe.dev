@@ -1,0 +1,13 @@
+on:
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+  schedule:
+    - cron: '0 * * * *'
+name: Sync
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Sync
+        uses: r-universe/sync@v1
