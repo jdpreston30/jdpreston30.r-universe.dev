@@ -7,7 +7,7 @@ on:
 name: Sync
 jobs:
   sync:
+    secrets: inherit
     uses: r-universe-org/workflows/.github/workflows/sync.yml@v3
-    inherit-secrets: true
     with:
       token: ${{ secrets.PAT_FOR_UNIVERSE }}
