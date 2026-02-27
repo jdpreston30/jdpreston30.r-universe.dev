@@ -7,6 +7,9 @@ on:
 name: Sync
 jobs:
   sync:
-    uses: r-universe-org/workflows/.github/workflows/sync.yml@v3
-    with:
-      token: ${{ secrets.PAT_FOR_UNIVERSE }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Sync
+        uses: r-universe/sync@v1
+        env:
+          GITHUB_PAT: ${{ secrets.PAT_FOR_UNIVERSE }}
